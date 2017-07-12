@@ -1,1 +1,10 @@
-Hello, world. You're at the polls index.
+Estado del sevidor principal
+<h1>Estado</h1>
+<p>
+{% if estado == 'encendido' %}
+    Encendido
+{% else %}
+    Apagado
+{% endif %}
+</p>
+<a href="{% url 'encender' %}">ENCENDER</a>
