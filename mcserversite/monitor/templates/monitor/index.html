@@ -1,3 +1,7 @@
+{% load staticfiles %}
+
+<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "js/monitor.js" %}"></script>
 Estado del sevidor principal
 <h1>Estado</h1>
 <p>
@@ -8,3 +12,7 @@ Estado del sevidor principal
 {% endif %}
 </p>
 <a href="{% url 'encender' %}">ENCENDER</a>
+<button id="button_encender"    			 
+    class="btn btn-primary" type="button">
+    Ok
+</button>
