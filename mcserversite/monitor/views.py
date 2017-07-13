@@ -27,3 +27,12 @@ def encender(request):
                 print('encender')
     response = 'ok'
     return HttpResponse(response)
+
+def encender_minecraft(request):
+    script = os.path.join(settings.BASE_DIR, 'static/scripts/runmcserver.sh')    
+    output = subprocess.call([script], shell = True)
+    print(output)
+    if request.method == 'GET':
+                print('encender_minecraft')
+    response = 'ok'
+    return HttpResponse(response)
