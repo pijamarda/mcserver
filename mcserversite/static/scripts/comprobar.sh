@@ -21,3 +21,13 @@ else
     echo "apagado" 
     echo "apagado" > /home/zeneke/www/mcserver/mcserversite/static/status/server.txt 
 fi
+
+nc -z 10.0.0.40 25565
+rs=$?
+if [[ $rs -eq 0 ]] ; then                  # Make final determination.
+    echo "Esta encendido"
+    echo "encendido" > /home/zeneke/www/mcserver/mcserversite/static/status/mc.txt 
+else
+    echo "APAGADO, ejecutar encendido"
+    echo "apagado" > /home/zeneke/www/mcserver/mcserversite/static/status/mc.txt 
+fi
