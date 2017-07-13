@@ -8,5 +8,14 @@ $( document ).ready(function() {
 			console.log("llego dentro del get del javascript");
 			$('#suma_puntos').html(data);			
 		});
+	});
+	$('#button_encender_minecraft').click(function()
+	{
+		console.log("tramito el jquery");		
+		$.get('/monitor/api/encenderminecraft/', function(data)
+		{
+			console.log("llego dentro del get del javascript");
+			$('#suma_puntos').html(data);			
+		});
     });
 });
