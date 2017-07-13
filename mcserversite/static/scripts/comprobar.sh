@@ -14,8 +14,10 @@ echo $rc
 
 if [[ $rc -eq 0 ]] ; then                  # Make final determination.
     echo "Esta encendido"
-    echo "encendido" 
+    echo "encendido"
+    echo "encendido" > /home/zeneke/www/mcserver/mcserversite/static/status/server.txt 
 else
     echo "APAGADO, ejecutar encendido"
     echo "apagado" 
+    echo "apagado" > /home/zeneke/www/mcserver/mcserversite/static/status/server.txt 
 fi

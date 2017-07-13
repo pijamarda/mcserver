@@ -6,3 +6,5 @@ __pycache__/
 vMcserver/
 settings.py
 db.sqlite3
+server.txt
+mc.txt
