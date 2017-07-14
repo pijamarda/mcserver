@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<html>
+<head>
+
+    <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js/monitor.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+</head>
+
+<body>
+    <div class="page-header">
+        {% if user.is_authenticated %}
+            
+            <p class="top-menu">
+                <a href="{% url 'logout' %}">
+                <span class="glyphicon glyphicon-share"> Logout </span>
+                </a>
+                </p>
+                <p class="top-menu">
+                <span class="glyphicon glyphicon-user"> {{ user.username }} </span>
+                </p>
+        {% else %}                
+            
+            <a href="{% url 'login' %}" class="top-menu">
+                <span class="glyphicon glyphicon-lock"> Login </span>
+            </a>
+        {% endif %}
+        <h1> Temp</h1>
+
+    </div>
+    <div class="content">            
+
+        <div>
+            {% block content %}
+            {% endblock %}           
+            
+        </div>
+    </div>
+</body>
+
+</html>
