@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.templatetags.static import static
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     estado_server = 'apagado'
@@ -19,6 +20,7 @@ def index(request):
                                                   'estado_server': estado_server, 
                                                   })
 
+@login_required
 def encender(request):
     script = os.path.join(settings.BASE_DIR, 'static/scripts/wakeonlan.sh')    
     output = subprocess.call([script], shell = True)
@@ -28,6 +30,7 @@ def encender(request):
     response = 'ok'
     return HttpResponse(response)
 
+@login_required
 def encender_minecraft(request):
     script = os.path.join(settings.BASE_DIR, 'static/scripts/runmcserver.sh')    
     output = subprocess.call([script], shell = True)

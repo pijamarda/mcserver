@@ -2,33 +2,37 @@
 
 {% block content %}
 
-    <h1>Estado del sevidor principal</h1>
+    <h2>Estado del sevidor principal</h2>
     <p>
     {% if estado_server == 'encendido' %}
-        <h2><span class="label label-success">Encendido</span></h2>
+        <h3><span class="label label-success">Encendido</span></h3>
     {% else %}
-        <h2><span class="label label-danger">Apagado</span></h2>
-        <button id="button_encender"    			 
-            class="btn btn-primary" type="button">
-            Encender
-        </button>
+        <h3><span class="label label-danger">Apagado</span></h3>
+        {% if user.is_authenticated %}
+            <button id="button_encender"    			 
+                class="btn btn-primary" type="button">
+                Encender
+            </button>
+        {% endif %}
     {% endif %}
     </p>
 
 
-    <h1>Estado del sevidor MC</h1>
+    <h2>Estado del sevidor MC</h2>
     <p>
     {% if estado_mc == 'encendido' %}
-        <h2><span class="label label-success">Encendido</span></h2>
+        <h3><span class="label label-success">Encendido</span></h3>
     {% else %}
-        <h2><span class="label label-danger">Apagado</span></h2>
+        <h3><span class="label label-danger">Apagado</span></h3>
         {% if estado_server == 'encendido' %}
-            Cuidado si lo encendemos asi nos quedamo sin gestion y <br />
-            hay que apagarlo a mano <br />
-            <button id="button_encender_minecraft"    			 
-                class="btn btn-primary" type="button">
-                Encender MC
-            </button>
+            {% if user.is_authenticated %}
+                Cuidado si lo encendemos asi nos quedamo sin gestion y <br />
+                hay que apagarlo a mano <br />
+                <button id="button_encender_minecraft"    			 
+                    class="btn btn-primary" type="button">
+                    Encender MC
+                </button>
+            {% endif %}
         {% endif %}
     {% endif %}
     </p>
