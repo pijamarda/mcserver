@@ -21,10 +21,12 @@ $( document ).ready(function() {
 			$('#button_encender_minecraft').prop("disabled",true);
 			move_mc();
 		});
+		/* Para las pruebas con un servidor de prueba
 		console.log("llego dentro del get del javascript");
 		$('#progressMC').css("visibility", "visible");			
 		$('#button_encender_minecraft').prop("disabled",true);
 		move_mc();
+		*/
     });
 });
 
