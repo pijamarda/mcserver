@@ -1,0 +1,10 @@
+#progressPC, #progressMC {
+    visibility: hidden;
+    width: 400px;
+    background-color: #ddd;
+}
+#varPC, #varMC {
+    width: 0%;
+    height: 30px;
+    background-color: green;
+}
